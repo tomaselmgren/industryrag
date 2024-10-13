@@ -1,13 +1,11 @@
 import os
-import time
 import json
-import copy
-import tiktoken
 import openai
 from dotenv import load_dotenv
 import numpy as np
+import streamlit as st
 from numpy.linalg import norm
-from typing import Dict, List, Union, Optional
+from typing import Dict, List
 from docx import Document
 import openpyxl
 import pymupdf
@@ -165,7 +163,8 @@ class DB:
 class DocumentToText:
     def __init__(self):
         self,
-        self.api_key = os.getenv("OPENAI_API_KEY")
+        #self.api_key = os.getenv("OPENAI_API_KEY")
+        self.api_key = st.secrets["OPENAI_API_KEY"]
     
     def process_and_store_documents(self, files, db: DB):
         for file in files:
