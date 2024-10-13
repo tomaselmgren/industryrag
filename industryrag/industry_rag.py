@@ -1,6 +1,6 @@
 import os
 import json
-import openai
+from openai import OpenAI
 from dotenv import load_dotenv
 import numpy as np
 import streamlit as st
@@ -353,7 +353,7 @@ class IndustryRAG:
     def _generate_answer(self, query: str):
         relevant_chunks = self._fetch_relevant_chunks(query)
 
-        response = openai.chat.completions.create(
+        response = OpenAI.chat.completions.create(
             model=self.model_name,
             messages=[{
                 "role": "system", "content": en_prompts["context"].format(context=relevant_chunks)
