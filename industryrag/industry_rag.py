@@ -1,7 +1,7 @@
 import os
 import json
 from openai import OpenAI
-from dotenv import load_dotenv
+#from dotenv import load_dotenv
 import numpy as np
 import streamlit as st
 from numpy.linalg import norm
@@ -14,7 +14,7 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_openai import OpenAIEmbeddings
 from .prompts import en_prompts
 
-load_dotenv()
+#load_dotenv()
 
 class DB:
     def __init__(self, db_file_path, embedding_model_name):
