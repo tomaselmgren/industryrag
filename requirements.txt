@@ -1,8 +1,7 @@
 openai==1.51.2
 streamlit
-docx
+python-docx
 openpyxl
 pymupdf
-sqlite3
 langchain_text_splitters
 langchain_openai
