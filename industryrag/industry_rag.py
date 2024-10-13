@@ -354,7 +354,7 @@ class IndustryRAG:
     def _generate_answer(self, query: str):
         relevant_chunks = self._fetch_relevant_chunks(query)
 
-        response = self.client.completions.create(
+        response = self.client.chat.completions.create(
             model=self.model_name,
             messages=[{
                 "role": "system", "content": en_prompts["context"].format(context=relevant_chunks)
