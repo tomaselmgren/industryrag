@@ -324,7 +324,8 @@ class IndustryRAG:
         self.embeddings_model_name = embeddings_model_name
         self.max_generation_tokens = max_generation_tokens
         self.temperature = temperature
-        self.api_key = os.getenv("OPENAI_API_KEY")
+        #self.api_key = os.getenv("OPENAI_API_KEY")
+        self.api_key = st.secrets["OPENAI_API_KEY"]
 
         print(f'''Initiated a new IndustryRAG model: \n
               Model: {model_name}, \n
