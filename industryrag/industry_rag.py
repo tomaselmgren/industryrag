@@ -326,6 +326,7 @@ class IndustryRAG:
         self.temperature = temperature
         #self.api_key = os.getenv("OPENAI_API_KEY")
         self.api_key = st.secrets["OPENAI_API_KEY"]
+        self.client = OpenAI()
 
         print(f'''Initiated a new IndustryRAG model: \n
               Model: {model_name}, \n
@@ -353,7 +354,7 @@ class IndustryRAG:
     def _generate_answer(self, query: str):
         relevant_chunks = self._fetch_relevant_chunks(query)
 
-        response = OpenAI.chat.completions.create(
+        response = self.client.completions.create(
             model=self.model_name,
             messages=[{
                 "role": "system", "content": en_prompts["context"].format(context=relevant_chunks)
