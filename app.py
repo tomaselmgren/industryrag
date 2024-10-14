@@ -15,7 +15,7 @@ with st.sidebar:
 
     tokens = st.slider("Max Generation Tokens", 10, 1024, 200, 8)
 
-    temperature = st.slider("Temperature", 0.00, 2.00, 0.5)
+    temperature = st.slider("Temperature", 0.00, 1.50, 0.5)
 
     model = st.selectbox("Generation Model", ["gpt-3.5-turbo-0125"])
 
